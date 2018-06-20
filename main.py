@@ -45,9 +45,10 @@ model = helper.build_model(SEQUENCE_LENGTH, chars)
     Train the model
 """
 
-# model.fit(X, y, batch_size=128, nb_epoch=EPOCHS)
-model = load_model("final.h5")  # you can skip training by loading the trained weights
-
+#model.fit(X, y, batch_size=128, nb_epoch=EPOCHS)
+model = load_model("model.h5")  # you can skip training by loading the trained weights
+#model.save("model.h5")
+#print("Saved model to disk")
 """
     Pick a random sequence and make the network continue
 """
@@ -81,6 +82,3 @@ for diversity in [0.2, 0.5, 1.0, 1.2]:
         sys.stdout.write(next_char)
         sys.stdout.flush()
     print()
-
-
-
